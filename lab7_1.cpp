@@ -3,7 +3,7 @@
 
 using namespace std;
 
-string func1(string x){
+string ReverseStr(string x){
 	int i = 0, L = x.size();
 	string y = "";
 	while(i < L){
@@ -13,7 +13,7 @@ string func1(string x){
 	return y;
 }
 
-string func2(string x){
+string UpperStr(string x){
 	int i = 0, L = x.size();
 	string y = "";
 	while(i < L){
@@ -23,7 +23,7 @@ string func2(string x){
 	return y;	
 }
 
-string func3(string x){
+string LowerStr(string x){
 	int i = 0, L = x.size();
 	string y = "";
 	while(i < L){
@@ -33,9 +33,22 @@ string func3(string x){
 	return y;	
 }
 
+string IsPalindrome(string inputStr, string reversedStr){
+	if(inputStr == reversedStr){
+		return "Yes";
+	}else{
+		return "No";
+	}
+}
+
 int main(){
-    cout >> "Input text: "
-    cout >> "Reversed text: "
-    cout >> "Palindrome: "
+	string myStr = "";
+
+    cout << "Input text: ";
+	cin >> myStr;
+
+
+    cout << "Reversed text: " << ReverseStr(myStr) << endl;
+    cout << "Palindrome: " << IsPalindrome(LowerStr(myStr),LowerStr(ReverseStr(myStr))) << endl;
     return 0;
 }
